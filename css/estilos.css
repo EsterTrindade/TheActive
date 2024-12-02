@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.game-board{
+    width: 90%;
+    height: 770px;
+    border: 1px solid rgb(0, 2, 138);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(24, 11, 146, 0.158);
+}
+
+.certrasgado{
+    position: absolute;
+    bottom: 0;
+    width: 200px;
+    animation: certrasgado-animation 1.5s infinite linear; 
+}
+
+@keyframes certrasgado-animation{
+    from {
+        right: 0;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+.aluno{
+    width: 180px;
+    position: absolute;
+    bottom: 0;
+    animation: jump 500ms ease-out;
+}
+
+@keyframes jump{
+    0%{
+        bottom: 0;
+    }
+
+    40%{
+        bottom: 180px;
+    }
+
+    50%{
+        bottom: 180px;
+    }
+
+    60%{
+        bottom: 180px;
+    }
+
+    100%{
+        bottom: 0;
+    }
+
+}
+
