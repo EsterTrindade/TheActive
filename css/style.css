@@ -5,29 +5,30 @@
     overflow: hidden;
 }
 
-/* Area aonde o game ira aparecer  */
+/* Área aonde o game ira aparecer  */
+
 .game-board {
     width: 100%;
-    height: 700px;
-    border-bottom: 21px solid rgb(81, 239, 81);
+    height: 800px;
+    border-bottom: 200px solid rgb(65, 65, 65);
     margin: 0 auto;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(#87ceeb, #e0f6ff);
+    background: linear-gradient(#aae2fc, #e0f6ff);
 }
 
-/* Formatação do tubo da tela  */
+/* Formatação do obstáculo da tela */
 .pipe {
    position: absolute; 
    bottom: 0;
-   width: 80px;
+   width: 150px;
    animation: pipe-animation 1.5s infinite linear; 
 }
 
-/* Estilização do mario */
+/* Estilização do aluno */
 
-.mario {
-   width: 150px;
+.alun {
+   width: 180px;
    bottom: 0;
    position: absolute;  
 }
@@ -39,10 +40,16 @@
 .clouds {
     position: absolute;
     width: 550px;
-    animation: clouds-animation 15s infinite linear;
+    animation: clouds-animation 10s infinite linear;
 }
 
-/* Animação dos tubos */
+.birds {
+  position: absolute;
+  width: 400px;
+  animation: clouds-animation 5s infinite linear;
+}
+
+/* Animação dos obstáculos */
 @keyframes pipe-animation {
     from {
        right: -80px;
@@ -53,7 +60,7 @@
     }
 }
 
-/* Animação do mario  */
+/* Animação do aluno  */
 @keyframes jump {
   
   0% {

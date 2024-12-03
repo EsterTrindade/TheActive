@@ -1,19 +1,21 @@
-// Essa const recebe a imagem do mario diretamente do html
-const mario = document.querySelector(".mario");
+// Essa const recebe a imagem do aluno diretamente do html
+const alun = document.querySelector(".alun");
+
 // Essa const recebe a imagem dos tubos diretamente do html
+
 const pipe = document.querySelector(".pipe");
 
 /* 
-essa é a função que faz o mario pular
+essa é a função que faz o aluno pular
 toda vez que o usuário pressionar uma tecla
 */ 
 
 const jump = () => {
-  mario.classList.add("jump");
+  alun.classList.add("jump");
 
   setTimeout(() => {
 
-   mario.classList.remove("jump"); 
+    alun.classList.remove("jump"); 
 
   }, 500);
 }
@@ -21,21 +23,21 @@ const jump = () => {
 const loop = setInterval(() => {
    console.log(loop);
    const pipePosition = pipe.offsetLeft; 
-   const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '');
-   console.log(marioPosition);
+   const alunPosition = +window.getComputedStyle(alun).bottom.replace('px', '');
+   console.log(alunPosition);
    
-   if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
+   if (pipePosition <= 120 && pipePosition > 0 && alunPosition < 80) {
 
     pipe.style.animation = 'none';
     pipe.style.left = `${pipePosition}px`;
 
-    mario.style.animation = 'none';
-    mario.style.bottom = `${marioPosition}px`;
+    alun.style.animation = 'none';
+    alun.style.bottom = `${alunPosition}px`;
 
-    mario.src = './imagens/game-over.png';
-    mario.style.width = '75px';
-    mario.style.marginLeft = '50px';
-    mario.style.marginBottom = '5px';
+    alun.src = './imagens/game-over.png';
+    alun.style.width = '75px';
+    alun.style.marginLeft = '50px';
+    alun.style.marginBottom = '5px';
    
     clearInterval(loop);
 
@@ -44,4 +46,5 @@ const loop = setInterval(() => {
 }, 10)
 
 // Esse comando gera a saida da animação, e declara o evento.
+
 document.addEventListener("keydown", jump);
