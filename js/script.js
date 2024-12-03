@@ -1,31 +1,47 @@
-const aluno = document.querySelector('.aluno');
-const certrasgado = document.querySelector('.certrasgado');
+// Essa const recebe a imagem do mario diretamente do html
+const mario = document.querySelector(".mario");
+// Essa const recebe a imagem dos tubos diretamente do html
+const pipe = document.querySelector(".pipe");
+
+/* 
+essa é a função que faz o mario pular
+toda vez que o usuário pressionar uma tecla
+*/ 
 
 const jump = () => {
-    aluno.classList.add('jump');
+  mario.classList.add("jump");
 
-    setTimeout(() => {
+  setTimeout(() => {
 
-        aluno.classList.remove('jump');
+   mario.classList.remove("jump"); 
 
-    }, 500);
+  }, 500);
 }
 
 const loop = setInterval(() => {
-    const certrasgadoPosition = certrasgado.offsetLeft;
-    const alunoPosition = +window.getComputedStyle(aluno).bottom.replace('px', );
+   console.log(loop);
+   const pipePosition = pipe.offsetLeft; 
+   const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '');
+   console.log(marioPosition);
+   
+   if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
 
-    console.log(alunoPosition);
-    
-    if (certrasgadoPosition <= 120 && alunoPosition < 80)
-    {
+    pipe.style.animation = 'none';
+    pipe.style.left = `${pipePosition}px`;
 
-        certrasgado.style.animation = 'none';
-        certrasgado.style.left = `${certrasgadoPosition}px`;
+    mario.style.animation = 'none';
+    mario.style.bottom = `${marioPosition}px`;
 
-    }
-    
-}, 10);
+    mario.src = './imagens/game-over.png';
+    mario.style.width = '75px';
+    mario.style.marginLeft = '50px';
+    mario.style.marginBottom = '5px';
+   
+    clearInterval(loop);
 
+   }
 
-document.addEventListener('keydown', jump);
+}, 10)
+
+// Esse comando gera a saida da animação, e declara o evento.
+document.addEventListener("keydown", jump);
